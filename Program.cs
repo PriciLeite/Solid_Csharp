@@ -8,7 +8,11 @@ namespace Solid
         {
             Pessoa pessoa1 = new Pessoa();
             pessoa1.name = "José";
-            Console.WriteLine(pessoa1.name);
+            pessoa1.age = 20;
+            pessoa1.gender = "Masculino";
+
+            pessoa1.Identification();
+
         }
     }
 }
