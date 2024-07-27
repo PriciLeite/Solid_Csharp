@@ -1,0 +1,62 @@
+# Visual Studio
+.vscode/
+.vscode/*
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (Mono Auto Generated)
+mono_crash.*
+
+# User-specific files (ReSharper)
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# User-specific files (JetBrains Rider)
+.idea/
+
+# Ignorar pastas bin e obj
+/bin/
+/obj/
+
+# Project files
+*.csproj.user
+*.csproj.core.user
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Uncomment if you have a toolchain file and you use CMake
+#CMakeLists.txt.user
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows shortcuts
+*.lnk
+
+# End of the `.gitignore` file
+

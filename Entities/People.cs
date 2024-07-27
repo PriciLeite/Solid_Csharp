@@ -1,52 +1,54 @@
 using System;
 
-namespace Solid
+namespace Solid;
+
+
+public class People
 {
+    // Encapsulate Members private:
+    private string name;
+    private int age;
+    private string gender;
 
-    public class People
+    // Access member public:
+    public string Name { get; }
+
+    // Specific constructor:
+    public People(string name)
     {
-        //
-        private string name;
-        private int age;
-        private string gender;
+        this.Name = name;
+    }
 
-
-        //builder enable set:
-        public People(string name)
+    // Update set gender:
+    public string Gender
+    {
+        set
         {
-            this.Name = name;
+            gender = value;
         }
-        public string Name { get; }
+        // Access member public:
+        get { return gender; }
+    }
 
-
-        public string Gender
+    // Update set age / condition:
+    public int Age
+    {
+        set
         {
-            set
+            if (value < 18)
             {
-                gender = value;
-                System.Console.WriteLine(gender);
+                System.Console.WriteLine("Idade menor do que 18!");
+            }
+            else
+            {
+                this.age = value;
             }
         }
-
-        //builder enable set condition:
-        public int Age
-        {
-            set
-            {
-                if (value < 18)
-                {
-                    System.Console.WriteLine("Idade menor do que 18!");
-                }
-                else
-                {
-                    this.age = value;
-                }
-            }
-            get { return age; }
-
-        }
+        get { return age; }
 
     }
 
-
 }
+
+
+

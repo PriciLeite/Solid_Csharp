@@ -12,6 +12,7 @@ namespace Solid
             p1.Age = 20;
 
             System.Console.WriteLine(p1.Name);
+            System.Console.WriteLine(p1.Gender);
             System.Console.WriteLine(p1.Age);
 
 
