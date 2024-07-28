@@ -7,48 +7,31 @@ namespace Solid;
 public class People
 {
     // Encapsulate Members private:
-    private string name;
-    private int age;
-    private string gender;
+    public string Name { get; private set; }
+    public int Age { get; private set; }
+    public string Gender { get; private set; }
 
-    // Access member public:
-    public string Name { get; }
 
     // Specific constructor:
-    public People(string name)
+    public People(string name, string gender, int age)
     {
-        DomainExptionValidation.When(string.IsNullOrEmpty(name), "O nome deve ser informado.");
+        if (age >= 18)
+        {
+            System.Console.WriteLine($"Idade: {age}");
+        }
+        else
+        {
+            throw new InvalidOperationException("Idade inválida, menor que 18");
+        }
+
+        if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(gender))
+            throw new InvalidOperationException();
+
         this.Name = name;
+        this.Gender = gender;
+        this.Age = age;
     }
 
-    // Update set gender:
-    public string Gender
-    {
-        set
-        {
-            gender = value;
-        }
-        // Access member public:
-        get { return gender; }
-    }
-
-    // Update set age / condition:
-    public int Age
-    {
-        set
-        {
-            if (value > 18)
-            {
-                this.age = value;
-            }
-            else
-            {
-                DomainExptionValidation.When(value < 18, "Idade menor do que 18!");
-            }
-        }
-        get { return age; }
-
-    }
 
 }
 
