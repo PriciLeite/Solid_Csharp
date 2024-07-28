@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 
 namespace Solid;
 
@@ -16,6 +17,7 @@ public class People
     // Specific constructor:
     public People(string name)
     {
+        DomainExptionValidation.When(string.IsNullOrEmpty(name), "O nome deve ser informado.");
         this.Name = name;
     }
 
@@ -35,13 +37,13 @@ public class People
     {
         set
         {
-            if (value < 18)
+            if (value > 18)
             {
-                System.Console.WriteLine("Idade menor do que 18!");
+                this.age = value;
             }
             else
             {
-                this.age = value;
+                DomainExptionValidation.When(value < 18, "Idade menor do que 18!");
             }
         }
         get { return age; }
