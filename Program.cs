@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
+using Solid.Utils;
+
 
 namespace Solid
 {
@@ -7,18 +8,15 @@ namespace Solid
     {
         static void Main(string[] args)
         {
-            try
-            {
-                Produto produto = new Produto("TVz", 1999.99m); // Isso funcionará
-                Console.WriteLine($"Produto: {produto.Nome}, Preço: {produto.Preco}");
+            var texto1 = "curso";
+            var texto2 = "maria";
 
-                // Isso lançará uma exceção
-                Produto produtoInvalido = new Produto("AB", 100.00m);
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine($"Erro ao criar o produto: {ex.Message}");
-            }
+            // método de extensão
+            texto1 = texto1.CaixaAltaPrimeiraLetra();
+            texto2 = texto2.CaixaAltaPrimeiraLetra();
+
+            System.Console.WriteLine(texto1);
+            System.Console.WriteLine(texto2);
         }
     }
 }
