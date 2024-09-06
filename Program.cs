@@ -11,12 +11,13 @@ class program
     {
         public int Numero { get; set; }
         public double Saldo { get; set; }
-        public void GetSaldo()
+
+        internal void GetSaldo()
         {
             System.Console.WriteLine($"Seu saldo atual R${Saldo.ToString("F2", CultureInfo.InvariantCulture)}");
         }
 
-        protected void Saque()
+        internal void Saque()
         {
             System.Console.Write("Digite valor para saque: ");
             double valor = double.Parse(Console.ReadLine());
