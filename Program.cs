@@ -6,11 +6,17 @@ namespace Solid;
 class program
 {
 
-
     class Conta
     {
+        public Conta()
+        {
+            System.Console.WriteLine("Testando se a classe derivada irá excutar primeiro o construtor da classe base");
+        }
+
         public int Numero { get; set; }
         public double Saldo { get; set; }
+
+
 
         internal void GetSaldo()
         {
@@ -39,6 +45,7 @@ class program
     class ContaPoupanca : Conta
     {
         public int JurosMensais { get; set; }
+
         static void Main(string[] args)
         {
             ContaPoupanca cp = new ContaPoupanca();
@@ -47,7 +54,6 @@ class program
             cp.GetSaldo();
             cp.Saque();
         }
-
     }
 
 
