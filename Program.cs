@@ -18,10 +18,12 @@ class program
 
 
 
-        protected virtual void GetSaldo()
+        protected void GetSaldo()
         {
             System.Console.WriteLine($"Seu saldo atual R${Saldo.ToString("F2", CultureInfo.InvariantCulture)}");
         }
+
+
 
         internal void Saque()
         {
@@ -46,9 +48,9 @@ class program
     {
         public int JurosMensais { get; set; }
 
-        protected override void GetSaldo()
+        protected new void GetSaldo()
         {
-            base.GetSaldo();
+            System.Console.WriteLine("Método (Saldo) da classe base foi ocultado por uso da palavra 'new'");
         }
 
         static void Main(string[] args)
