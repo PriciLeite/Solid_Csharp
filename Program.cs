@@ -1,21 +1,11 @@
-﻿using System;
-using System.Globalization;
-using System.Security.Claims;
-using Solid.Utils;
+﻿using System.Globalization;
 
 
 namespace Solid;
 
 class program
 {
-    static void Main(string[] args)
-    {
-        ContaPoupanca cp = new ContaPoupanca();
-        cp.Numero = 001;
-        cp.Saldo = 1000.00;
-        cp.GetSaldo();
-        cp.Saque();
-    }
+
 
     class Conta
     {
@@ -26,7 +16,7 @@ class program
             System.Console.WriteLine($"Seu saldo atual R${Saldo.ToString("F2", CultureInfo.InvariantCulture)}");
         }
 
-        public void Saque()
+        protected void Saque()
         {
             System.Console.Write("Digite valor para saque: ");
             double valor = double.Parse(Console.ReadLine());
@@ -38,7 +28,7 @@ class program
             }
             else
             {
-                throw new Exception($"Saldo {Saldo} insuficiente! ");
+                throw new Exception($"\nSeu saldo de R${Saldo.ToString("F2", CultureInfo.InvariantCulture)} é insuficiente!\n");
             }
 
         }
@@ -48,6 +38,15 @@ class program
     class ContaPoupanca : Conta
     {
         public int JurosMensais { get; set; }
+        static void Main(string[] args)
+        {
+            ContaPoupanca cp = new ContaPoupanca();
+            cp.Numero = 001;
+            cp.Saldo = 1000.00;
+            cp.GetSaldo();
+            cp.Saque();
+        }
+
     }
 
 
