@@ -18,7 +18,7 @@ class program
 
 
 
-        internal void GetSaldo()
+        protected virtual void GetSaldo()
         {
             System.Console.WriteLine($"Seu saldo atual R${Saldo.ToString("F2", CultureInfo.InvariantCulture)}");
         }
@@ -45,6 +45,11 @@ class program
     class ContaPoupanca : Conta
     {
         public int JurosMensais { get; set; }
+
+        protected override void GetSaldo()
+        {
+            base.GetSaldo();
+        }
 
         static void Main(string[] args)
         {
