@@ -14,7 +14,13 @@ class program
             this.numeroChasis = numeroChassis;
             System.Console.WriteLine($"Inicializando Veiculo: {numeroChasis}");
         }
+
+        public virtual void MetodoTeste()
+        {
+            System.Console.WriteLine("Teste de retorno para o método da classe Veiculo.");
+        }
     }
+
 
     public class Carro : Veiculo
     {
@@ -23,12 +29,18 @@ class program
             System.Console.WriteLine($"Inicializando Carro: {numeroChassis}");
         }
 
-    }
+        public override void MetodoTeste()
+        {
+            base.MetodoTeste();
+            System.Console.WriteLine("Teste de retorno para o método herdado da classe Veiculo.");
+        }
 
+    }
 
     static void Main(string[] args)
     {
         var carro = new Carro("E34910");
+        carro.MetodoTeste();
     }
 }
 
