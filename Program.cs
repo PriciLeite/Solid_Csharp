@@ -7,16 +7,16 @@ class program
 {
     static void Main(string[] args)
     {
-        Forma f = new Forma();
-        Circulo c = f as Circulo; // Realizando a conversão de tipos de forma explícita (DownCasting)
+        Circulo c = new Circulo();
+        Forma f = c; // Realizando UpCasting - Implicito.
 
-        if (c != null)
+        if (f is Circulo) // Verificando se a conversão é possível
         {
-            c.Pintar();
+            ((Circulo)f).Pintar();
         }
         else
         {
-            System.Console.WriteLine($"Obejto Circulo {c} nulo!");
+            System.Console.WriteLine("A conversão não é possível!");
         }
 
     }
