@@ -7,13 +7,17 @@ class program
 {
     static void Main(string[] args)
     {
-        Circulo circulo = new Circulo();
-        Forma f = circulo; // UpCasting -> Implícita
+        Forma f = new Forma();
+        Circulo c = f as Circulo; // Realizando a conversão de tipos de forma explícita (DownCasting)
 
-        Circulo c = (Circulo)f;
-
-        System.Console.WriteLine(c == f);
-        System.Console.WriteLine(c == circulo);
+        if (c != null)
+        {
+            c.Pintar();
+        }
+        else
+        {
+            System.Console.WriteLine($"Obejto Circulo {c} nulo!");
+        }
 
     }
 }
